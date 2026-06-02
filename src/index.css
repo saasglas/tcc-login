@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;600&display=swap');
+
+@theme {
+  --font-archivo: "Archivo", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  --color-pink-primary: #eb2592;
+  --color-pink-dark: #BD006b;
+  --color-pink-soft: #EA7BB4;
+  --color-pink-vibrant: #D63D72;
+  
+  --color-purple-primary: #A144cc;
+  --color-purple-vibrant: #CF33EF;
+  --color-purple-muted: #6d4d7a;
+  
+  --color-dark-bg: #1d1d1d;
+  --color-dark-surface: #393939;
+  --color-dark-gray: #585858;
+  
+  --color-gray-light: #E4E4E4;
+  --color-gray-muted: #C5C5c5;
+
+  --animate-pulse: pulse 1s linear infinite;
+
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-montserrat bg-dark-bg text-white antialiased;
+  }
+}
+
+.glass-nav {
+  @apply backdrop-blur-lg border border-white/10 bg-white/5 shadow-2xl;
+}
+
+.input-glow:focus-within {
+  @apply border-pink-primary ring-1 ring-pink-primary/30;
+}
+
+.form-card-gradient {
+  background-image: linear-gradient(163deg, var(--color-pink-primary) 0%, var(--color-purple-primary) 100%);
+}
